@@ -1,0 +1,22 @@
+.contact-info{
+    text-align: center;
+    padding: 40px;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.contact-info-icon {
+    width: 30px;
+    margin: 0 5px 5px 0;
+}
+
+@media (max-width: 767px) {
+    .info-container h3{
+        margin-top: 10px;
+    }
+  }
