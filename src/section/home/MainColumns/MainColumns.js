@@ -23,13 +23,12 @@ const MainColumns = () => {
         <Card.Text>
             <h4 className='list-heading'> 
             - 일상생활 
-            <p className="list-sub"> 카지노 병원 학교 직장 공항</p> 
+            <p className="list-sub"> 카지노 병원 학교 직장 공항 출장</p> 
             </h4>
             <h4 className='list-heading'>- 단체손님</h4> 
             <h4 className='list-heading'>- 장거리</h4>
             <h4 className='list-heading'>- 무료 카시트 서비스</h4>
         </Card.Text>
-        <Button variant="primary">예약하기</Button>
       </Card.Body>
     </Card>
     </Col>
@@ -45,7 +44,6 @@ const MainColumns = () => {
             <h4 className='list-heading'>- 피로할때</h4>
             <h4 className='list-heading'>- 운전하기 힘든 상황일때</h4>
         </Card.Text>
-        <Button variant="primary">예약하기</Button>
       </Card.Body>
     </Card>
     </Col>
@@ -61,7 +59,6 @@ const MainColumns = () => {
             <h4 className='list-heading'>- 가구 운반</h4>
             <h4 className='list-heading'>- 운동기구 운반</h4>
         </Card.Text>
-        <Button variant="primary">예약하기</Button>
       </Card.Body>
     </Card>
     </Col>
@@ -77,12 +74,14 @@ const MainColumns = () => {
             <h4 className='list-heading'>- 애완동물</h4>
             <h4 className='list-heading'>- 인력 및 핸디맨</h4>
         </Card.Text>
-        <Button variant="primary">예약하기</Button>
       </Card.Body>
     </Card>
     </Col>
     </Row>
     </Container>
+    <div class="d-flex justify-content-center">
+    <Button a href="/contact" variant="primary">예약하기</Button>
+    </div>
     </section>
 );
 }

@@ -13,6 +13,9 @@ const NavbarElement = () => {
           <img className='contact-icon' src={ContactIcon} />
             469.123.1234
             </Nav.Link>
+            <Nav.Link href="/Contact">
+            예약 및 문의
+            </Nav.Link>
         </Nav>
     </Container>
   </Navbar>

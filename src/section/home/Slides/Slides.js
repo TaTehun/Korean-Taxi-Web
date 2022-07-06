@@ -39,7 +39,7 @@ const Slides = () => {
         />
         <Carousel.Caption className="slide-cap">
           <h3>카카오톡 서비스</h3>
-          <p>달라스 맛집, 핫플레이스 추천부터 택시 예약까지 간편하게!
+          <p>미국 생활정보, 달라스 맛집, 핫플레이스 추천부터 택시 예약까지 간편하게!
             <li>Kakao ID: xxxxxxx13</li>
             <li>오픈챗: xxxxxxx13</li> 
             </p>

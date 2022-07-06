@@ -10,9 +10,9 @@ import kakaoIcon from '../../../img/icons/kakaoIcon.svg'
 
 const ContactInfo = () => {
   return (
+    <Container className="contact-container">
     <div className="contact-info">
         <h1>Contact Us</h1>
-    <Container>
         <Row className='info-container'>
         <Col className="col-lg-4 col-md-4 col-sm-12 col-12">
 
@@ -32,8 +32,9 @@ const ContactInfo = () => {
             <p> djcbddd212@gmail.com </p>
             </Col>
         </Row>
+        </div>
     </Container>
-    </div>
+    
   )
 }
 

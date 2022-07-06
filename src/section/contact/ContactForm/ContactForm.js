@@ -25,8 +25,8 @@ const ContactForm = () => {
 
   return (
     <section className="section">
+      <Container className="contact-container">
       <h1>Appointment</h1>
-      <Container>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3">
         <Form.Group as={Col} controlId="name">
@@ -49,7 +49,7 @@ const ContactForm = () => {
       </Row>
 
       <Form.Group hasValidatio className="mb-3" controlId="email">
-          <Form.Label>이메일 (*중요) </Form.Label>
+          <Form.Label>이메일 </Form.Label>
           <Form.Control 
             required
             type="email"
@@ -127,16 +127,11 @@ const ContactForm = () => {
 
         <Form.Group as={Col} controlId="car-kind">
           <Form.Label>차 종류</Form.Label>
-          <Form.Control
-          required 
-          as="select"
-          type="select"
-          value="" />
           <Form.Select defaultValue="Choose...">
             <option>선택...</option>
-            <option value="sedan">세단(4인승)</option>
-            <option value="suv">미니밴(6인승)</option>
-            <option value="van">서버밴(8인승)</option>
+            <option value="sedan">세단(4인승) - $2.50/mi </option>
+            <option value="suv">미니밴(6인승) - $3.00/mi</option>
+            <option value="van">서버밴(8인승) - $4.00/mi</option>
           </Form.Select>
         </Form.Group>
       </Row>
@@ -144,7 +139,7 @@ const ContactForm = () => {
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>요청사항</Form.Label>
         <Form.Control as="textarea" rows={3} 
-        placeholder="예시)카시트가 필요합니다." />
+        placeholder="예시)무료 카시트 서비스 1개 부탁드립니다." />
       </Form.Group>
 
       <Form.Group className="mb-3" id="formGridCheckbox">
@@ -152,7 +147,7 @@ const ContactForm = () => {
         required
         feedback="체크박스를 눌러주세요"
         feedbackType="invalid"
-        type="checkbox" label="정확한 이메일을 기입하셨나요?" />
+        type="checkbox" label="정확한 전화번호, 이메일을 입력하셨나요?" />
       </Form.Group>
 
       <Button variant="primary" type="submit">
