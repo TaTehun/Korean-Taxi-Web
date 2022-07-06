@@ -1,10 +1,6 @@
 import './MainColumns.css';
 import styles from './MainColumns.css';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {Row, Col, Form, Container, Button, Card } from 'react-bootstrap'
 import TaxiIcon from '../../../img/icons/taxiIcon.svg'
 import CarIcon from '../../../img/icons/carIcon.svg'
 import DeliveryIcon from '../../../img/icons/deliveryIcon.svg'

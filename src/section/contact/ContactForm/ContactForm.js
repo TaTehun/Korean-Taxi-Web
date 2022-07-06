@@ -1,11 +1,9 @@
 import './ContactForm.css'
 import React, { useState } from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import {Row, Col, Form, Container, Button } from 'react-bootstrap'
 import InputGroup from 'react-bootstrap/InputGroup';
+import surveyTemplate from '../../../service/emailTemplate'
+import Mailer from '../../../service/Mailer'
 
 
 
@@ -62,7 +60,8 @@ const ContactForm = () => {
           <Form.Label>날짜</Form.Label>
           <Form.Control 
                       required
-                      type="number"
+                      type="text"
+                      format="mm/dd"
                       feedbackType="invalid"
                       placeholder="08/15" />
         </Form.Group>
@@ -71,18 +70,9 @@ const ContactForm = () => {
           <Form.Label>시간</Form.Label>
           <Form.Control 
                       required
-                      type="text"
+                      type="time"
                       feedbackType="invalid"
                       placeholder="3시30분" />
-        </Form.Group>
-
-      <Form.Group as={Col} controlId="time-kind">
-          <Form.Label>시간대</Form.Label>
-          <Form.Select defaultValue="Choose...">
-            <option>선택...</option>
-            <option value="am">오전</option>
-            <option value="pm">오후</option>
-          </Form.Select>
         </Form.Group>
         </Row>
 
@@ -136,7 +126,7 @@ const ContactForm = () => {
         </Form.Group>
       </Row>
 
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+      <Form.Group className="mb-3" controlId="message">
         <Form.Label>요청사항</Form.Label>
         <Form.Control as="textarea" rows={3} 
         placeholder="예시)무료 카시트 서비스 1개 부탁드립니다." />
@@ -157,6 +147,18 @@ const ContactForm = () => {
       </Container>
       </section>
   )
+}
+
+const handleSubmit = (fields) => {
+  const message = {
+      to: 'johntestdoe68@gmail.com',
+      from: fields.email,
+      subject: '택시 예약 이메일 입니다.',
+      html: `
+      <p> <strong>Name:</strong> $(fields.name} </p>
+      <p> $(fields.message} </p>
+      `
+  }
 }
 
 export default ContactForm;

@@ -1,8 +1,6 @@
 import './ContactInfo.css'
 import styles from './ContactInfo.css';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
+import {Row, Col, Container } from 'react-bootstrap'
 import phoneIcon from '../../../img/icons/phoneIcon.svg'
 import emailIcon from '../../../img/icons/emailIcon.svg'
 import kakaoIcon from '../../../img/icons/kakaoIcon.svg'
