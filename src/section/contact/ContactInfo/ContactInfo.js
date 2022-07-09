@@ -1,5 +1,4 @@
 import './ContactInfo.css'
-import styles from './ContactInfo.css';
 import {Row, Col, Container } from 'react-bootstrap'
 import phoneIcon from '../../../img/icons/phoneIcon.svg'
 import emailIcon from '../../../img/icons/emailIcon.svg'
@@ -15,19 +14,19 @@ const ContactInfo = () => {
         <Col className="col-lg-4 col-md-4 col-sm-12 col-12">
 
             <h3> <img className='contact-info-icon' src={phoneIcon} /> Phone </h3>
-            <p> 111.111.1111 </p>
+            <p> 469.417.9999 / 214.994.7850 </p>
             </Col>
 
             <Col className="col-lg-4 col-md-4 col-sm-12 col-12">
             
             <h3> <img className='contact-info-icon' src={emailIcon} /> Email </h3>
-            <p> djcbddd212@gmail.com </p>
+            <p> roadsolutions21@gmail.com </p>
             </Col>
 
             <Col className="col-lg-4 col-md-4 col-sm-12 col-12">
             
             <h3> <img className='contact-info-icon' src={kakaoIcon} /> Kakao ID </h3>
-            <p> djcbddd212@gmail.com </p>
+            <p> djcbddd21 </p>
             </Col>
         </Row>
         </div>

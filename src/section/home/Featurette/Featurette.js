@@ -1,5 +1,5 @@
 import './Featurette.css'
-import {Row, Col, Form, Container, Button } from 'react-bootstrap'
+import {Row, Col, Container, Button } from 'react-bootstrap'
 import Divider from '@mui/material/Divider';
 import Box from '@mui/system/Box';
 import Sedan from '../../../img/graphics/sedan.jpg'

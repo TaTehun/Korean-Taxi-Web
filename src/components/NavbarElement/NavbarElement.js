@@ -11,7 +11,7 @@ const NavbarElement = () => {
         <Nav className="me-auto">
           <Nav.Link href="/Contact">
           <img className='contact-icon' src={ContactIcon} />
-            469.123.1234
+            469.417.9999
             </Nav.Link>
             <Nav.Link href="/Contact">
             예약 및 문의
