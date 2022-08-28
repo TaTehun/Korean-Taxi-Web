@@ -6,7 +6,7 @@
 .info-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: top;
     margin: 50px auto;
 }
 

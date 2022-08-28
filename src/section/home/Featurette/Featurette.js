@@ -44,7 +44,7 @@ const Featurette = () => {
     <Row className='figure-container'>
     <Col md={5} md={{ order: 1 }}>
     <div className='text-container'>
-    <h1 className="heading"> <span className="text-muted"> 6 인승 </span> SUV </h1>
+    <h1 className="heading"> <span className="text-muted"> 6 인승 </span> Van </h1>
     <p> $3.00/mi </p>
     <p className="text-muted">*The vehicle image shown is for illustration purposes only and may not be an exact representation of the service vehicle.</p>
     <div class="d-flex justify-content-center">

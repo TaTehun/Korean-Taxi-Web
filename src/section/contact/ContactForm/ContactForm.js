@@ -2,9 +2,6 @@ import './ContactForm.css'
 import React, { useState } from 'react';
 import {Row, Alert, Col, Form, Container, Button } from 'react-bootstrap'
 
-
-
-
 const ContactForm = () => {
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
@@ -13,13 +10,14 @@ const ContactForm = () => {
     const [date,setDate] = useState('');
     const [time,setTime] = useState('');
     const [departure,setDeparture] = useState("");
+    const [stop,setStop] = useState("");
     const [arrival,setArrival] = useState("");
     const [account,setAccount] = useState("");
     const [car,setCar] = useState("");
     const [service,setService] = useState("");
 
       const handleSubmit = () => {
-        fetch("http://localhost:5000/contact",{
+        fetch("http://familytaxidallas.com/contact",{
           method:"post",
           headers:{
           "Content-Type":"application/json"
@@ -32,6 +30,7 @@ const ContactForm = () => {
           phone,
           date,
           departure,
+          stop,
           arrival,
           account,
           service,
@@ -41,19 +40,31 @@ const ContactForm = () => {
           .then(data=>{
           alert(data.message)
           setMessage(''); setName(''); setEmail(''); setTime('');
-          setPhone(''); setDate(''); setDeparture(''); setArrival('');
+          setPhone(''); setDate(''); setDeparture(''); setStop(''); setArrival('');
           setAccount(''); setCar(''); setService('');
          })
-          .catch(err=>{
-          console.log(err)
+          .catch(error=>{
+          alert(error)
           })
           }
+
+          const [validated, setValidated] = useState(false);
+
+          const validation = (event) => {
+            const form = event.currentTarget;
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+        
+            setValidated(true);
+          };
 
   return (
     <section className="section">
       <Container className="contact-container">
       <h1>Appointment</h1>
-      <Form onSubmit={handleSubmit}>
+      <Form noValidate validated={validated} onSubmit={handleSubmit && validation}>
         <Row className="mb-3">
         <Form.Group as={Col} controlId="name">
           <Form.Label>이름</Form.Label>
@@ -112,10 +123,20 @@ const ContactForm = () => {
         <Form.Label>출발지</Form.Label>
         <Form.Control 
                               required
-                              type="address"
+                              type="text"
                               value={departure}
                               onChange={(e)=>setDeparture(e.target.value)}
         placeholder="1234 Main St, Dallas TX 75000" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="stop">
+        <Form.Label>경유지</Form.Label>
+        <Form.Control 
+                              required
+                              type="text"
+                              value={stop}
+                              onChange={(e)=>setStop(e.target.value)}
+        placeholder="5678 Alexandria St, Dallas TX 75121" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="arrival">
@@ -143,21 +164,22 @@ const ContactForm = () => {
           <Form.Label>서비스</Form.Label>
           <Form.Select required value={service} onChange={(e)=>setService(e.target.value)} >
             
-          <option value="taxi">선택</option>
-            <option value="taxi">택시</option>
-            <option value="car">대리</option>
-            <option value="delivery">딜리버리</option>
-            <option value="errand">심부름</option>
+          <option value="선택">선택</option>
+            <option value="택시">택시</option>
+            <option value="대리">대리운전</option>
+            <option value="딜리버리">딜리버리</option>
+            <option value="심부름">심부름</option>
           </Form.Select>
         </Form.Group>
 
         <Form.Group as={Col} controlId="car">
           <Form.Label>차 종류</Form.Label>
           <Form.Select required value={car} onChange={(e)=>setCar(e.target.value)}>
-            <option value="">선택...</option>
-            <option value="sedan">세단(4인승) - $2.50/mi </option>
+            <option value="선택">선택...</option>
+            <option value="대리">대리 - $5.00/mi </option>
+            <option value="세단">세단(4인승) - $2.50/mi </option>
             <option value="suv">미니밴(6인승) - $3.00/mi</option>
-            <option value="van">서버밴(8인승) - $4.00/mi</option>
+            <option value="서버밴">서버밴(8인승) - $4.00/mi</option>
           </Form.Select>
         </Form.Group>
       </Row>
@@ -181,7 +203,7 @@ const ContactForm = () => {
       </Button>
       <script>
       <Alert>
-      Message Sent!
+      예약 해주셔서 감사합니다!
     </Alert>
       </script>
         </Form>
